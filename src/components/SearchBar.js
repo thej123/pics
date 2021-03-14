@@ -60,7 +60,9 @@ class SearchBar extends React.Component {
     // Arrow functions automatically have their function binded with the class
     onFormSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state.term)
+        // console.log(this.state.term)
+        // class based component - we need 'this' - so this.props.
+        this.props.onMySubmit(this.state.term)
     }
 
     
