@@ -1,4 +1,6 @@
 import React from 'react';
+import './ImageList.css';
+import ImageCard from './ImageCard';
 
 const ImageList = (props) => {
 
@@ -17,15 +19,20 @@ const ImageList = (props) => {
         // )
         return <img key={image.id} src={image.urls.regular} alt={image.description}/>
     })
-    */
+    
 
-    // Getting the keys out of the image object
+    Getting the keys out of the image object
     const images = props.images.map(({id, urls, description}) => {
         return <img key={id} src={urls.regular} alt={description}/> 
     })
+    */
+
+    const images = props.images.map((image) => {
+        return <ImageCard key={image.id} image={image}/>
+    })
 
     return (
-        <div>{images}</div>
+        <div className="image-list">{images}</div>
     )
 }
 
